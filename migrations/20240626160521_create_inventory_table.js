@@ -5,12 +5,6 @@
 export function up(knex) {
   return knex.schema.createTable("inventory", (table) => {
     table.increments("id").primary();
-    table
-      .integer("user_id")
-      .unsigned()
-      .references("user.id")
-      .onUpdate("CASCADE")
-      .onDelete("CASCADE");
     table.string("item_name").notNullable();
     table.string("description").notNullable();
     table.string("image").notNullable();
