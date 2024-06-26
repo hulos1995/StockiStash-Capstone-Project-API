@@ -20,6 +20,7 @@ Employees: - abilities to have a visual of the items - abilities to take out an 
 - As a user, I want to learn more about the items
 - As a user, I want to see how many available items
 - As a user, I want to search for an item
+- As a user, I want to be able to use dark mode for the site
 - As a user, I want to be able to create an account
 - As a user, I want to be able to login to my account
 - As a user, I want to be able to logout of my account
@@ -28,7 +29,6 @@ Employees: - abilities to have a visual of the items - abilities to take out an 
 - As a logged in manager, I want to be able to edit an item in the inventory
 - As a logged in manager, I want to be able to delete an item from the inventory
 - As a logged in employee, I want to be able to see items that are related to my field
-- As a logged in employee, I want to be able to report when an item is about to run out
 - As a logged in employee, I want to be able to see items that are not available
 - As a logged in employee, I want to be able to search for an item
 - As a logged in employee, I will have a limit access to certain item that is not related to my fields
@@ -307,4 +307,5 @@ Response:
  - Have a page dedicate to a tool in the inventory of how to use it
  - Add a forgot password functionality
  - Employee will have a cart and shows how many items has already been taken out
+ -Reporting features
 ````
