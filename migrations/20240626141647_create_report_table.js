@@ -3,7 +3,7 @@
  * @returns { Promise<void> }
  */
 export function up(knex) {
-  return knex.schema.createTable("inventory", (table) => {
+  return knex.schema.createTable("reports", (table) => {
     table.increments("id").primary();
     table
       .integer("user_id")
@@ -11,11 +11,8 @@ export function up(knex) {
       .references("user.id")
       .onUpdate("CASCADE")
       .onDelete("CASCADE");
-    table.string("item_name").notNullable();
+    table.string("reporter").notNullable();
     table.string("description").notNullable();
-    table.string("image").notNullable();
-    table.string("status").notNullable();
-    table.integer("quantity").notNullable();
     table.timestamp("created_at").defaultTo(knex.fn.now());
     table
       .timestamp("updated_at")
@@ -27,5 +24,5 @@ export function up(knex) {
  * @returns { Promise<void> }
  */
 export function down(knex) {
-  return knex.schema.dropTable("inventory");
+  return knex.schema.dropTable("reports");
 }
