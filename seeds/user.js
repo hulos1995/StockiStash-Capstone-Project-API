@@ -11,5 +11,17 @@ export async function seed(knex) {
       password: "rootroot",
       user_role: "Admin",
     },
+    {
+      id: 2,
+      user_name: "polish",
+      password: "polish",
+      user_role: "Polisher",
+    },
+    {
+      id: 3,
+      user_name: "spotter",
+      password: "spotter",
+      user_role: "Spotter",
+    },
   ]);
 }
