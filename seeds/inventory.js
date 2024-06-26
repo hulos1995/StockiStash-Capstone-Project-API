@@ -12,6 +12,7 @@ export async function seed(knex) {
       image: "http://localhost:8080/images/emery_strip.png",
       quantity: 1000,
       status: "In Stock",
+      link: "https://www.moldshoptools.com/catalog/list.php?category_id=10",
       user_id: 2,
     },
     {
@@ -21,6 +22,7 @@ export async function seed(knex) {
       image: "http://localhost:8080/images/bench-roll.png",
       quantity: 50,
       status: "In Stock",
+      link: "https://www.moldshoptools.com/catalog/list.php?category_id=68",
       user_id: 2,
     },
     {
@@ -30,6 +32,7 @@ export async function seed(knex) {
       image: "http://localhost:8080/images/air-grinder.png",
       quantity: 0,
       status: "Out of Stock",
+      link: "https://www.moldshoptools.com/catalog/list.php?category_id=177",
       user_id: 3,
     },
     {
@@ -39,6 +42,7 @@ export async function seed(knex) {
       image: "http://localhost:8080/images/AM8-HardStone.png",
       quantity: 100,
       status: "In Stock",
+      link: "https://www.moldshoptools.com/catalog/list.php?category_id=65",
       user_id: 2,
     },
     {
@@ -48,6 +52,7 @@ export async function seed(knex) {
       image: "http://localhost:8080/images/carbide-burrs.png",
       quantity: 50,
       status: "In Stock",
+      link: "https://dmscomponents.com/Carbide-Burs-3-32-Miniatures/CB-3-32-Miniatures",
       user_id: 2,
     },
     {
@@ -57,6 +62,7 @@ export async function seed(knex) {
       image: "http://localhost:8080/images/cut-off-wheels.png",
       quantity: 1000,
       status: "In Stock",
+      link: "https://dmscomponents.com/Products/Polishing-Tools/Mandrels-Wheels/",
       user_id: 2,
     },
     {
@@ -66,6 +72,7 @@ export async function seed(knex) {
       image: "http://localhost:8080/images/di-profiler.png",
       quantity: 0,
       status: "Out of Stock",
+      link: "https://www.moldshoptools.com/catalog/list.php?category_id=168",
       user_id: 2,
     },
     {
@@ -75,6 +82,7 @@ export async function seed(knex) {
       image: "http://localhost:8080/images/felt-bobs.png",
       quantity: 0,
       status: "Out of Stock",
+      link: "https://www.moldshoptools.com/catalog/list.php?category_id=327",
       user_id: 2,
     },
     {
@@ -84,6 +92,7 @@ export async function seed(knex) {
       image: "http://localhost:8080/images/felt-highpolish.png",
       quantity: 100,
       status: "In Stock",
+      link: "https://www.moldshoptools.com/catalog/list.php?category_id=136",
       user_id: 2,
     },
     {
@@ -93,6 +102,7 @@ export async function seed(knex) {
       image: "http://localhost:8080/images/felt-sheets.png",
       quantity: 50,
       status: "In Stock",
+      link: "https://www.moldshoptools.com/catalog/list.php?category_id=260",
       user_id: 2,
     },
     {
@@ -102,6 +112,7 @@ export async function seed(knex) {
       image: "http://localhost:8080/images/foot-pedal.png",
       quantity: 30,
       status: "In Stock",
+      link: "https://dmscomponents.com/Speed-Control/12375",
       user_id: 2,
     },
     {
@@ -111,6 +122,7 @@ export async function seed(knex) {
       image: "http://localhost:8080/images/hard_maplewood.png",
       quantity: 20,
       status: "In Stock",
+      link: "https://www.moldshoptools.com/catalog/list.php?category_id=111",
       user_id: 2,
     },
     {
@@ -120,6 +132,7 @@ export async function seed(knex) {
       image: "http://localhost:8080/images/mandrels.png",
       quantity: 75,
       status: "In Stock",
+      link: "https://dmscomponents.com/Products/Polishing-Tools/Mandrels-Wheels/",
       user_id: 3,
     },
     {
@@ -129,6 +142,7 @@ export async function seed(knex) {
       image: "http://localhost:8080/images/inner-shafts.png",
       quantity: 10,
       status: "In Stock",
+      link: "https://dmscomponents.com/Flexible-Shafts-Inner/12675",
       user_id: 2,
     },
     {
@@ -138,6 +152,7 @@ export async function seed(knex) {
       image: "http://localhost:8080/images/motor.png",
       quantity: 5,
       status: "In Stock",
+      link: "https://dmscomponents.com/DUMORE-Series-6-Super-Flex/6-021",
       user_id: 2,
     },
     {
@@ -147,6 +162,7 @@ export async function seed(knex) {
       image: "http://localhost:8080/images/mounted-points.png",
       quantity: 200,
       status: "In Stock",
+      link: "https://www.moldshoptools.com/catalog/list.php?category_id=190",
       user_id: 3,
     },
     {
@@ -156,6 +172,7 @@ export async function seed(knex) {
       image: "http://localhost:8080/images/oil.png",
       quantity: 5,
       status: "In Stock",
+      link: "https://www.moldshoptools.com/catalog/list.php?category_id=127",
       user_id: 2,
     },
     {
@@ -165,6 +182,7 @@ export async function seed(knex) {
       image: "http://localhost:8080/images/polishing-brush-small.png",
       quantity: 60,
       status: "In Stock",
+      link: "https://dmscomponents.com/Products/Polishing-Tools/Polishing-Brushes/",
       user_id: 2,
     },
     {
@@ -174,6 +192,7 @@ export async function seed(knex) {
       image: "http://localhost:8080/images/polishing-brush.png",
       quantity: 0,
       status: "Out of Stock",
+      link: "https://dmscomponents.com/Products/Polishing-Tools/Polishing-Brushes/",
       user_id: 2,
     },
     {
@@ -183,6 +202,7 @@ export async function seed(knex) {
       image: "http://localhost:8080/images/power-lock.png",
       quantity: 7,
       status: "In Stock",
+      link: "https://www.moldshoptools.com/catalog/list.php?category_id=94",
       user_id: 3,
     },
     {
@@ -192,6 +212,7 @@ export async function seed(knex) {
       image: "http://localhost:8080/images/psa-emery.png",
       quantity: 300,
       status: "In Stock",
+      link: "https://www.moldshoptools.com/catalog/list.php?category_id=96",
       user_id: 2,
     },
     {
@@ -202,6 +223,7 @@ export async function seed(knex) {
       image: "http://localhost:8080/images/right-angle-handtool.png",
       quantity: 0,
       status: "Out of Stock",
+      link: "https://www.moldshoptools.com/catalog/list.php?category_id=319",
       user_id: 2,
     },
     {
@@ -211,6 +233,7 @@ export async function seed(knex) {
       image: "http://localhost:8080/images/stone-holder.png",
       quantity: 100,
       status: "In Stock",
+      link: "https://www.moldshoptools.com/catalog/list.php?category_id=38",
       user_id: 2,
     },
     {
@@ -220,6 +243,7 @@ export async function seed(knex) {
       image: "http://localhost:8080/images/super-stone.png",
       quantity: 0,
       status: "Out of Stock",
+      link: "https://www.moldshoptools.com/catalog/list.php?category_id=300",
       user_id: 2,
     },
     {
@@ -229,6 +253,7 @@ export async function seed(knex) {
       image: "http://localhost:8080/images/T2-WetStone.png",
       quantity: 0,
       status: "Out of Stock",
+      link: "https://www.moldshoptools.com/catalog/list.php?category_id=65",
       user_id: 2,
     },
     {
@@ -238,6 +263,7 @@ export async function seed(knex) {
       image: "http://localhost:8080/images/T4-WetStone.png",
       quantity: 100,
       status: "In Stock",
+      link: "https://www.moldshoptools.com/catalog/list.php?category_id=65",
       user_id: 2,
     },
     {
@@ -247,6 +273,7 @@ export async function seed(knex) {
       image: "http://localhost:8080/images/ultralap-70.png",
       quantity: 50,
       status: "In Stock",
+      link: "https://www.moldshoptools.com/catalog/list.php?category_id=166",
       user_id: 2,
     },
   ]);
