@@ -10,7 +10,7 @@ router.route("/").get(async (_req, res) => {
       .select(
         "inventory.*",
         knex.raw(
-          'JSON_ARRAYAGG(JSON_OBJECT("id", grit.id, "grit", grit.grit, "quantity", grit.quantity, "description", grit.description)) as grits'
+          'JSON_ARRAYAGG(JSON_OBJECT("id", grit.id, "grit", grit.grit, "quantity", grit.quantity, "description", grit.description, "image", grit.image)) as grits'
         )
       )
       .groupBy("inventory.id");
@@ -31,7 +31,7 @@ router.route("/:id").get(async (req, res) => {
       .select(
         "inventory.*",
         knex.raw(
-          'JSON_ARRAYAGG(JSON_OBJECT("id", grit.id, "grit", grit.grit, "quantity", grit.quantity, "description", grit.description)) as grits'
+          'JSON_ARRAYAGG(JSON_OBJECT("id", grit.id, "grit", grit.grit, "quantity", grit.quantity, "description", grit.description, "image", grit.image)) as grits'
         )
       )
       .where("inventory.id", req.params.id)
