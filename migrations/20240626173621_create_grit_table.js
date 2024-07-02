@@ -14,6 +14,7 @@ export function up(knex) {
     table.integer("grit").notNullable();
     table.integer("quantity").notNullable();
     table.string("description").notNullable();
+    table.string("image").notNullable();
   });
 }
 
