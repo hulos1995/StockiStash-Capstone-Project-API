@@ -28,7 +28,7 @@ export async function seed(knex) {
     {
       id: 3,
       item_name: "Air Grinder",
-      description: "Used for removing cutter marks",
+      description: "Used for removing light stock",
       image: "http://localhost:8080/images/air-grinder.png",
       quantity: 0,
       status: "Out of Stock",
@@ -38,7 +38,7 @@ export async function seed(knex) {
     {
       id: 4,
       item_name: "AM8 Hard Stone",
-      description: "Hard stone used for removing cutter marks. DRY",
+      description: "Hard stone used for roughing. DRY",
       image: "http://localhost:8080/images/AM8-HardStone.png",
       quantity: 100,
       status: "In Stock",
@@ -68,7 +68,7 @@ export async function seed(knex) {
     {
       id: 7,
       item_name: "Di Profiler",
-      description: "Profiling tool for details work, Ask before take out",
+      description: "Profiling tool for details work.",
       image: "http://localhost:8080/images/di-profiler.png",
       quantity: 0,
       status: "Out of Stock",
@@ -218,8 +218,7 @@ export async function seed(knex) {
     {
       id: 22,
       item_name: "Right Angle Hand Tool",
-      description:
-        "Handheld right angle, easy to break if not used properly. Ask before take out",
+      description: "Handheld right angle, use with care.",
       image: "http://localhost:8080/images/right-angle-handtool.png",
       quantity: 0,
       status: "Out of Stock",
@@ -259,7 +258,7 @@ export async function seed(knex) {
     {
       id: 26,
       item_name: "T4 Wet Stone",
-      description: "Finer than T2, T4 wet stone for polishing, WET",
+      description: "Finer than T2, T4 wet stone, WET",
       image: "http://localhost:8080/images/T4-WetStone.png",
       quantity: 100,
       status: "In Stock",
@@ -269,7 +268,7 @@ export async function seed(knex) {
     {
       id: 27,
       item_name: "Ultralap 70",
-      description: "Ultralap 70 use only with super stone, Ask before take out",
+      description: "Ultralap 70 use only with super stone.",
       image: "http://localhost:8080/images/ultralap-70.png",
       quantity: 50,
       status: "In Stock",

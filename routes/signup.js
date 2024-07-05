@@ -6,12 +6,10 @@ const router = express.Router();
 // -   Registers a new user.
 // -   Expected body: { user_name, password, user_role }
 router.post("/", async (req, res) => {
-  const { user_name, password, user_role } = req.body;
+  const { first_name, last_name, user_name, password, user_role } = req.body;
   // Validate the input
-  if (!user_name || !password || !user_role) {
-    return res
-      .status(400)
-      .send("Please provide user name, password, and user_role");
+  if (!first_name || !last_name || !user_name || !password || !user_role) {
+    return res.status(400).send("All fields are required!");
   }
   try {
     // Check if the user already exists
@@ -23,6 +21,8 @@ router.post("/", async (req, res) => {
     const hashedPassword = bcrypt.hashSync(password, 10);
     // Insert the new user into the database
     await knex("user").insert({
+      first_name,
+      last_name,
       user_name,
       password: hashedPassword,
       user_role,
