@@ -11,7 +11,6 @@ import { SECRET_KEY } from "../utils/constants.js";
 
 const router = express.Router();
 const knex = initKnex(configuration);
-
 // Middleware to get user role and ID from the token
 const getUserRoleAndId = (req, res, next) => {
   const authHeader = req.headers.authorization;
@@ -76,7 +75,6 @@ router.get("/:id", verifyToken, canAccessInventory, async (req, res) => {
     if (inventoryItem.length === 0) {
       return res.status(404).send("Inventory item not found");
     }
-
     // Filter out null grit entries
     const filterNull = {
       ...inventoryItem[0],
