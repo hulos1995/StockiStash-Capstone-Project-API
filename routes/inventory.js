@@ -2,15 +2,28 @@ import express from "express";
 import initKnex from "knex";
 import configuration from "../knexfile.js";
 import jwt from "jsonwebtoken";
+import multer from "multer";
 import {
   verifyToken,
   isAdmin,
   canAccessInventory,
 } from "../middleware/auth.js";
 import { SECRET_KEY } from "../utils/constants.js";
+import { UPLOADS_DIR } from "../utils/path.js"; 
 
 const router = express.Router();
 const knex = initKnex(configuration);
+
+const storage = multer.diskStorage({
+  destination: (_req, _file, cb) => {
+    cb(null, UPLOADS_DIR);
+  },
+  filename: (_req, file, cb) => {
+    cb(null, Date.now() + '-' + file.originalname);
+  }
+});
+
+const upload = multer({ storage });
 // Middleware to get user role and ID from the token
 const getUserRoleAndId = (req, res, next) => {
   const authHeader = req.headers.authorization;
@@ -40,7 +53,8 @@ router.get("/", getUserRoleAndId, async (req, res) => {
           'JSON_ARRAYAGG(JSON_OBJECT("id", grit.id, "grit", grit.grit, "quantity", grit.quantity, "description", grit.description, "image", grit.image)) as grits'
         )
       )
-      .groupBy("inventory.id");
+      .groupBy("inventory.id")
+      .orderBy("inventory.created_at", "desc");
 
     // Filter based on user role and ID
     if (req.userRole !== "Admin" && req.userRole !== "guest") {
@@ -58,6 +72,33 @@ router.get("/", getUserRoleAndId, async (req, res) => {
     return res.status(500).send("Error getting inventories");
   }
 });
+
+router.post("/", verifyToken, upload.single('image'), async (req, res) => {
+  const { item_name, description, quantity, status, link, user_id } = req.body;
+  // base URL of the server, to add into database
+  const image = req.file ? `${req.protocol}://${req.get('host')}/images/${req.file.filename}` : null;
+  if (!item_name || !description || !image || !quantity || !status || !link || !user_id) {
+    return res.status(400).send("All fields are required");
+  }
+  try {
+    await knex("inventory").insert({
+      item_name,
+      description,
+      image,
+      quantity,
+      status,
+      link,
+      user_id,
+      created_at: new Date(),
+      updated_at: new Date(),
+    });
+    res.status(201).send("Inventory item added successfully");
+  } catch (error) {
+    console.error("Error adding inventory item:", error);
+    res.status(500).send("Server error");
+  }
+});
+
 
 router.get("/:id", verifyToken, canAccessInventory, async (req, res) => {
   try {
