@@ -22,5 +22,4 @@ dist-ssr
 *.sln
 *.sw?
 .env
-utils/constants.js
-utils/generate_secret_key.js
+
