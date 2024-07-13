@@ -13,6 +13,10 @@ app.use(express.json());
 app.use(cors({ origin: CORS_URL }));
 const PORT = process.env.PORT || 5173;
 app.use(express.static('public'));
+app.get("/", (_req, res) => {
+  res.send("Welcome to my API");
+});
+
 app.use('/inventory', inventory);
 app.use('/login', login);
 app.use('/signup', signup);
